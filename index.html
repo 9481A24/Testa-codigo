@@ -3,45 +3,49 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Texto sobre Imagem</title>
+  <title>Treino Imagem e Frase</title>
   <style>
     body {
-      margin: 0;
+      background-color: #f0f0f0;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
 
     .image-container {
       position: relative;
+      width: 95%;
       max-width: 900px;
       margin: 40px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .image-container img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      height: auto;
+      display: block;
     }
 
     .image-text {
       position: absolute;
-      top: 50%;
+      top: 55%; /* Mude para 40% ou 60% se quiser subir ou descer */
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 26px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 16px 28px;
+      font-size: 28px;
       font-weight: bold;
-      background-color: rgba(0, 0, 0, 0.5); /* fundo semitransparente */
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-align: center;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
   <div class="image-container">
-    <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/images%20(8).jpeg" alt="Geladeira">
+    <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/WD106.png" alt="Conserto de Geladeira">
     <div class="image-text">Tio Tnesse aBem</div>
   </div>
 
