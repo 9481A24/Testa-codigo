@@ -1,54 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Treino Imagem e Frase</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exemplo de Galeria</title>
   <style>
     body {
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      background: #f4f4f4;
+      font-family: sans-serif;
+      padding: 20px;
     }
 
     .image-container {
       position: relative;
-      width: 95%;
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      text-align: center;
     }
 
     .image-container img {
-      width: 35%;
-      height: auto;
       display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .image-text {
       position: absolute;
-      top: 55%; /* Mude para 40% ou 60% se quiser subir ou descer */
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      padding: 16px 28px;
-      font-size: 28px;
+      color: white;
+      font-size: 24px;
       font-weight: bold;
-      border-radius: 8px;
+      text-shadow: 2px 2px 4px black;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
 
+  <!-- Imagem 1 - Tamanho Grande -->
   <div class="image-container">
-    <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/WD106.png" alt="Conserto de Geladeira">
-    <div class="image-text">Tio Tnesse aBem</div>
+    <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg"
+         alt="Imagem 1"
+         style="width: 100%; height: auto;">
+    <div class="image-text">🧱 Porcelanato Estatuário 48x48</div>
+  </div>
+
+  <!-- Imagem 2 - Tamanho Médio -->
+  <div class="image-container">
+    <img src="https://github.com/9481A24/Consertogeladeira/blob/main/geladeira-1-e1724770170643.png?raw=true"
+         alt="Imagem 2"
+         style="width: 80%; height: auto;">
+    <div class="image-text">🔧 Conserto de Geladeira</div>
+  </div>
+
+  <!-- Imagem 3 - Tamanho Menor -->
+  <div class="image-container">
+    <img src="https://github.com/9481A24/Consertogeladeira/blob/main/images%20(8).jpeg?raw=true"
+         alt="Imagem 3"
+         style="width: 60%; height: auto;">
+    <div class="image-text">📦 Peças Técnicas</div>
   </div>
 
 </body>
 </html>
+
 
