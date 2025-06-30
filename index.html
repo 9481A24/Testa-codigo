@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imagem com Texto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 10px;
+      opacity: 0.8; /* deixa a imagem levemente transparente */
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 style="text-align:center;">Exemplo com Texto em Cima da Imagem</h2>
+    
+    <div class="image-container">
+      <img src="https://source.unsplash.com/tMHAmxLyzvA" alt="Cidade moderna">
+      <div class="image-text">Tio Tnesse aBem</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
 
