@@ -1,3 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Estilo com Imagens</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- IMPORTA FONTE BONITA IGUAL AO EXEMPLO DA KINSTA -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #fefefe;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .titulo-estiloso {
+      text-align: center;
+      padding: 40px 20px;
+      font-family: 'Playfair Display', serif;
+      color: #111;
+      background-color: #fefefe;
+    }
+
+    .titulo-estiloso h1 {
+      font-size: 2.4em;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .galeria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .image-container {
+      position: relative;
+      max-width: 360px;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-text {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: bold;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="titulo-estiloso">
+    <h1>Estilo de imagem CSS: Aprimorando o Apelo Visual com Estilo</h1>
+  </section>
+
+  <section class="galeria">
+
+    <!-- BLOCO 1 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 1">
+      <div class="image-text">🧱 Porcelanato Lastra 1,20x2,60</div>
+    </div>
+
+    <!-- BLOCO 2 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 2">
+      <div class="image-text">🧱 Porcelanato Lastra 0,95x0,95</div>
+    </div>
+
+    <!-- BLOCO 3 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/download%281%29.jpeg" alt="Imagem 3">
+      <div class="image-text">🛠️ Serviço com Garantia</div>
+    </div>
+
+    <!-- BLOCO 4 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/WD106.png" alt="Imagem 4">
+      <div class="image-text">🔧 Manutenção Técnica</div>
+    </div>
+
+    <!-- BLOCO 5 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/images%20(8).jpeg" alt="Imagem 5">
+      <div class="image-text">🔌 Peças de Reposição</div>
+    </div>
+
+    <!-- BLOCO 6 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/images%20(9).jpeg" alt="Imagem 6">
+      <div class="image-text">⚙️ Sistema de Refrigeração</div>
+    </div>
+
+    <!-- BLOCO 7 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/images%20(10).jpeg" alt="Imagem 7">
+      <div class="image-text">❄️ Geladeiras Residenciais</div>
+    </div>
+
+    <!-- BLOCO 8 -->
+    <div class="image-container">
+      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/Estatuario-Porcelanato-Piso.png" alt="Imagem 8">
+      <div class="image-text">📏 Corte com Precisão</div>
+    </div>
+
+  </section>
+
+</body>
+</html>
 
 
 
