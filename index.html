@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -57,6 +58,7 @@
     border-radius: 8px;
     border: 1px solid #ccc;
     resize: none;
+    white-space: pre-line;
   }
   .entrada-bloco {
     display: flex;
@@ -165,7 +167,7 @@
       const dataEntrada = new Date(dataStr);
       if(dataEntrada <= hoje) {
         total += valor;
-        historicoNovo += `📅 ${formatDataHora(new Date())} | Cliente: ${origem} | Valor: R$ ${valor.toFixed(2)}\n`;
+        historicoNovo += `📅 ${formatDataHora(new Date())}\nCliente: ${origem}\nValor: R$ ${valor.toFixed(2)}\n------------------------------\n`;
       }
     }
 
@@ -179,7 +181,7 @@
       const dataEntrada = new Date(dataStr);
       if(dataEntrada <= hoje) {
         total += valor;
-        historicoNovo += `📅 ${formatDataHora(new Date())} | Cliente: ${origem} | Valor: R$ ${valor.toFixed(2)}\n`;
+        historicoNovo += `📅 ${formatDataHora(new Date())}\nCliente: ${origem}\nValor: R$ ${valor.toFixed(2)}\n------------------------------\n`;
       }
     }
 
