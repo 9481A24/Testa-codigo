@@ -1,145 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Estilo com Imagens</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- IMPORTA FONTE BONITA IGUAL AO EXEMPLO DA KINSTA -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      background-color: #fefefe;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .titulo-estiloso {
-      text-align: center;
-      padding: 40px 20px;
-      font-family: 'Playfair Display', serif;
-      color: #111;
-      background-color: #fefefe;
-    }
-
-    .titulo-estiloso h1 {
-      font-size: 2.4em;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    .galeria {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      padding: 40px 20px;
-    }
-
-    .image-container {
-      position: relative;
-      max-width: 360px;
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .image-text {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 1em;
-      font-weight: bold;
-      z-index: 2;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Controle Financeiro com Histórico Organizado</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
+    color: #333;
+  }
+  .container {
+    max-width: 720px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  h2, h3 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color .3s;
+  }
+  button:hover {
+    background-color: #218838;
+  }
+  textarea {
+    width: 100%;
+    height: 180px;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: monospace;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+  .entrada-bloco {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .entrada-bloco > div {
+    flex: 1 1 48%;
+    min-width: 300px;
+  }
+</style>
 </head>
-
 <body>
 
-  <section class="titulo-estiloso">
-    <h1>Azulejista Profissional: Aprimorando o Apelo Visual com Estilo</h1>
-  </section>
+<div class="container">
+  <h2>📒 Controle Financeiro com Histórico Organizado</h2>
 
-  <section class="galeria">
-
-    <!-- BLOCO 1 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 1">
-      <div class="image-text">🧱 Porcelanato Lastra 1,20x2,60</div>
+  <h3>Entradas com data digitada (Altere no formulário)</h3>
+  <div class="entrada-bloco">
+    <div>
+      <label>📝 Entrada 1 Origem:</label>
+      <input type="text" id="origem1" value="Cliente X" />
+      <label>📅 Data Digitada:</label>
+      <input type="date" id="data1" />
+      <label>💵 Valor (R$):</label>
+      <input type="number" id="valor1" step="0.01" value="200" />
     </div>
-
-    <!-- BLOCO 2 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 2">
-      <div class="image-text">🧱 Porcelanato Lastra 0,95x0,95</div>
+    <div>
+      <label>📝 Entrada 2 Origem:</label>
+      <input type="text" id="origem2" value="Cliente Y" />
+      <label>📅 Data Digitada:</label>
+      <input type="date" id="data2" />
+      <label>💵 Valor (R$):</label>
+      <input type="number" id="valor2" step="0.01" value="350" />
     </div>
+  </div>
 
-    <!-- BLOCO 3 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 3">
-      <div class="image-text">🛠️ Serviço com Garantia</div>
+  <h3>Entradas com data programada fixa (Altere datas no código)</h3>
+  <div class="entrada-bloco">
+    <div>
+      <label>📝 Entrada 3 Origem:</label>
+      <input type="text" id="origem3" value="Cliente A" />
+      <label>💵 Valor (R$):</label>
+      <input type="number" id="valor3" step="0.01" value="300" />
     </div>
-
-    <!-- BLOCO 4 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/azra-statuario-coffee-24x48-commercial-floor-2_1000x.jpg" alt="Imagem 4">
-      <div class="image-text">🔧 Manutenção Técnica</div>
+    <div>
+      <label>📝 Entrada 4 Origem:</label>
+      <input type="text" id="origem4" value="Cliente B" />
+      <label>💵 Valor (R$):</label>
+      <input type="number" id="valor4" step="0.01" value="300" />
     </div>
+  </div>
 
-    <!-- BLOCO 5 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Consertogeladeira/main/images%20(8).jpeg" alt="Imagem 5">
-      <div class="image-text">🔌 Peças de Reposição</div>
-    </div>
+  <button onclick="registrarEntradas()">Registrar Entradas</button>
 
-    <!-- BLOCO 6 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/images%20(6).jpeg" alt="Imagem 6">
-      <div class="image-text">⚙️ Sistema de Refrigeração</div>
-    </div>
+  <div class="bloco">
+    <h3>💰 Total Atual: <span id="total">R$ 0.00</span></h3>
+    <div class="titulo-divisao">📊 Divisão Atual:</div>
+    <div id="divisao"></div>
+  </div>
 
-    <!-- BLOCO 7 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 7">
-      <div class="image-text">❄️ Geladeiras Residenciais</div>
-    </div>
+  <div class="bloco">
+    <h3>📜 Histórico</h3>
+    <textarea id="historico" readonly></textarea>
+  </div>
+</div>
 
-    <!-- BLOCO 8 -->
-    <div class="image-container">
-      <img src="https://raw.githubusercontent.com/9481A24/Azulejistaprofissional/main/48X48-ESTATUARIO-polished-porcelain-tile.jpg" alt="Imagem 8">
-      <div class="image-text">📏 Corte com Precisão</div>
-    </div>
+<script>
+  const datasProgramadas = {
+    3: '2025-07-15',
+    4: '2025-07-20'
+  };
 
-  </section>
+  function registrarEntradas() {
+    const hoje = new Date();
+    let total = 0;
+    let historico = '';
 
+    function formatDataHora(d) {
+      return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+    }
 
+    // Entradas 1 e 2
+    for(let i =1; i <=2; i++) {
+      const origem = document.getElementById(`origem${i}`).value.trim();
+      const valor = parseFloat(document.getElementById(`valor${i}`).value);
+      const dataStr = document.getElementById(`data${i}`).value;
 
+      if(!origem || isNaN(valor) || valor <= 0 || !dataStr) continue;
 
-<footer>
-  <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
-  
-</footer>
+      const dataEntrada = new Date(dataStr);
+      if(dataEntrada <= hoje) {
+        total += valor;
+        historico += `Data e Hora: ${formatDataHora(new Date())}\nEntrada: R$ ${valor.toFixed(2)}\nCliente: ${origem}\n-------------------------\n`;
+      }
+    }
 
+    // Entradas 3 e 4
+    for(let i = 3; i <=4; i++) {
+      const origem = document.getElementById(`origem${i}`).value.trim();
+      const valor = parseFloat(document.getElementById(`valor${i}`).value);
+      const dataStr = datasProgramadas[i];
 
+      if(!origem || isNaN(valor) || valor <= 0 || !dataStr) continue;
 
-  
-  
+      const dataEntrada = new Date(dataStr);
+      if(dataEntrada <= hoje) {
+        total += valor;
+        historico += `Data e Hora: ${formatDataHora(new Date())}\nEntrada: R$ ${valor.toFixed(2)}\nCliente: ${origem}\n-------------------------\n`;
+      }
+    }
+
+    if(total === 0) {
+      alert("Nenhuma entrada válida para registrar hoje.");
+      return;
+    }
+
+    document.getElementById("total").textContent = `R$ ${total.toFixed(2)}`;
+
+    const dizimo = total * 0.10;
+    const contas = total * 0.30;
+    const alimentacao = total * 0.30;
+    const investimento = total * 0.30;
+
+    document.getElementById("divisao").innerHTML = `
+      <ul>
+        <li>🛐 Dízimo (10%): R$ ${dizimo.toFixed(2)}</li>
+        <li>💡 Contas (30%): R$ ${contas.toFixed(2)}</li>
+        <li>🍽️ Alimentação (30%): R$ ${alimentacao.toFixed(2)}</li>
+        <li>📈 Investimento (30%): R$ ${investimento.toFixed(2)}</li>
+      </ul>
+    `;
+
+    // Atualiza o textarea do histórico
+    document.getElementById("historico").value += historico;
+  }
+</script>
+
 </body>
 </html>
-
-
-
