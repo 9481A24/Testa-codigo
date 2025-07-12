@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -130,16 +131,31 @@
     4: '2025-07-20'
   };
 
+  function formatDataHora(d) {
+    return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+  }
+
+  function salvarDadosLocal(total, historico, divisaoHTML) {
+    localStorage.setItem('total', total.toFixed(2));
+    localStorage.setItem('historico', historico);
+    localStorage.setItem('divisao', divisaoHTML);
+  }
+
+  function carregarDadosSalvos() {
+    const total = localStorage.getItem('total');
+    const historico = localStorage.getItem('historico');
+    const divisao = localStorage.getItem('divisao');
+
+    if (total) document.getElementById("total").textContent = `R$ ${total}`;
+    if (historico) document.getElementById("historico").value = historico;
+    if (divisao) document.getElementById("divisao").innerHTML = divisao;
+  }
+
   function registrarEntradas() {
     const hoje = new Date();
-    let total = 0;
-    let historico = '';
+    let total = parseFloat(localStorage.getItem('total')) || 0;
+    let historicoNovo = '';
 
-    function formatDataHora(d) {
-      return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
-    }
-
-    // Entradas 1 e 2
     for(let i =1; i <=2; i++) {
       const origem = document.getElementById(`origem${i}`).value.trim();
       const valor = parseFloat(document.getElementById(`valor${i}`).value);
@@ -150,11 +166,10 @@
       const dataEntrada = new Date(dataStr);
       if(dataEntrada <= hoje) {
         total += valor;
-        historico += `Data e Hora: ${formatDataHora(new Date())}\nEntrada: R$ ${valor.toFixed(2)}\nCliente: ${origem}\n-------------------------\n`;
+        historicoNovo += `📅 ${formatDataHora(new Date())} | Cliente: ${origem} | Valor: R$ ${valor.toFixed(2)}\n`;
       }
     }
 
-    // Entradas 3 e 4
     for(let i = 3; i <=4; i++) {
       const origem = document.getElementById(`origem${i}`).value.trim();
       const valor = parseFloat(document.getElementById(`valor${i}`).value);
@@ -165,7 +180,7 @@
       const dataEntrada = new Date(dataStr);
       if(dataEntrada <= hoje) {
         total += valor;
-        historico += `Data e Hora: ${formatDataHora(new Date())}\nEntrada: R$ ${valor.toFixed(2)}\nCliente: ${origem}\n-------------------------\n`;
+        historicoNovo += `📅 ${formatDataHora(new Date())} | Cliente: ${origem} | Valor: R$ ${valor.toFixed(2)}\n`;
       }
     }
 
@@ -181,7 +196,7 @@
     const alimentacao = total * 0.30;
     const investimento = total * 0.30;
 
-    document.getElementById("divisao").innerHTML = `
+    const divisaoHTML = `
       <ul>
         <li>🛐 Dízimo (10%): R$ ${dizimo.toFixed(2)}</li>
         <li>💡 Contas (30%): R$ ${contas.toFixed(2)}</li>
@@ -190,9 +205,13 @@
       </ul>
     `;
 
-    // Atualiza o textarea do histórico
-    document.getElementById("historico").value += historico;
+    document.getElementById("divisao").innerHTML = divisaoHTML;
+    document.getElementById("historico").value += historicoNovo;
+
+    salvarDadosLocal(total, document.getElementById("historico").value, divisaoHTML);
   }
+
+  window.onload = carregarDadosSalvos;
 </script>
 
 </body>
